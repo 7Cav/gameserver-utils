@@ -1,9 +1,7 @@
 !/bin/bash
 
 # house keeping
-apt -y update
-apt -y --no-install-recommends install curl
-apt -y --no-install-recommends install lib32gcc1 ca-certificates
+apt install python3
 
 # download steamCMD
 cd /tmp
