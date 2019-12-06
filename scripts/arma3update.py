@@ -38,10 +38,9 @@ STEAM_PASS = os.environ['STEAM_PASSWORD']
 
 A3_SERVER_ID = os.environ['APP_ID']
 A3_SERVER_DIR = "/mnt/server"
-STEAMCMD_DIR = "/mnt/server/steamcmd"
 A3_WORKSHOP_ID = os.environ['WORKSHOP_ID']
 
-A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(STEAMCMD_DIR, A3_WORKSHOP_ID)
+A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID)
 A3_MODS_DIR = "/mnt/server/mods"
 
 MODS = {}
@@ -127,7 +126,8 @@ def update_mods():
 
 
 def lowercase_workshop_dir():
-    os.system("(cd {} && find . -depth -exec rename -v 's/(.*)\/([^\/]*)/$1\/\L$2/' {{}} \;)".format(A3_WORKSHOP_DIR))
+    if os.path.isdir(A3_WORKSHOP_DIR):
+        os.system("(cd {} && find . -depth -exec rename -v 's/(.*)\/([^\/]*)/$1\/\L$2/' {{}} \;)".format(A3_WORKSHOP_DIR))
 
 
 def create_mod_symlinks():
