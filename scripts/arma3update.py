@@ -38,7 +38,7 @@ STEAM_PASS = os.environ['STEAM_PASSWORD']
 STEAM_AUTH = os.environ['STEAM_AUTH']
 
 A3_SERVER_ID = os.environ['APP_ID']
-A3_SERVER_DIR = "/mnt/server/"
+A3_SERVER_DIR = "/mnt/server"
 A3_WORKSHOP_ID = os.environ['WORKSHOP_ID']
 
 A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID)
