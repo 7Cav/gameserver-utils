@@ -35,7 +35,6 @@ from urllib import request
 STEAM_CMD = "/mnt/server/steamcmd/steamcmd.sh"
 STEAM_USER = os.environ['STEAM_USERNAME']
 STEAM_PASS = os.environ['STEAM_PASSWORD']
-STEAM_AUTH = os.environ['STEAM_AUTH']
 
 A3_SERVER_ID = os.environ['APP_ID']
 A3_SERVER_DIR = "/mnt/server"
@@ -64,7 +63,7 @@ def call_steamcmd(params):
 
 
 def update_server():
-    steam_cmd_params  = " +login {} {} {}".format(STEAM_USER, STEAM_PASS, STEAM_AUTH)
+    steam_cmd_params  = " +login {} {}".format(STEAM_USER, STEAM_PASS)
     steam_cmd_params += " +force_install_dir {}".format(A3_SERVER_DIR)
     steam_cmd_params += " +app_update {} validate".format(A3_SERVER_ID)
     steam_cmd_params += " +quit"
