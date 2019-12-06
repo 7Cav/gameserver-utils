@@ -44,16 +44,7 @@ A3_WORKSHOP_ID = os.environ['WORKSHOP_ID']
 A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID)
 A3_MODS_DIR = "/mnt/server/mods"
 
-MODS = {
-    "@cba_a3":             "450814997",
-    "@ace3":               "463939057",
-    "@alive":              "620260972",
-    "@cup_terrains_core":  "583496184",
-    "@cup_terrains_maps":  "583544987",
-    "@cup_weapons":        "497660133",
-    "@cup_units":          "497661914",
-    "@cup_vehicles":       "541888371"
-}
+MODS = {}
 
 PATTERN = re.compile(r"workshopAnnouncement.*?<p id=\"(\d+)\">", re.DOTALL)
 WORKSHOP_CHANGELOG_URL = "https://steamcommunity.com/sharedfiles/filedetails/changelog"
